@@ -6,9 +6,9 @@ import pandas as pd
 app = Flask(__name__)
 
 # Load the trained model and encoders
-model = joblib.load("model.pkl")       # Load trained CO₂ prediction model
-encoder = joblib.load("encoder.pkl")   # Transport mode encoder
-scaler = joblib.load("scaler.pkl")     # Load feature scaler
+model = joblib.load("model.pkl")       
+encoder = joblib.load("encoder.pkl")   
+scaler = joblib.load("scaler.pkl")     
 
 @app.route("/")
 def index():
@@ -34,8 +34,7 @@ def result():
     except Exception as e:
         print("Error:", e)
         return f"Error: {str(e)}", 400
-
-# ✅ Updated predict_co2 function
+        
 def predict_co2(distance, time_taken, transport_mode):
     # Get transport modes from encoder
     all_modes = encoder.categories_[0].tolist()
