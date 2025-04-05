@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict CO₂ Savings</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: green;
+        }
+
+        select, input, button {
+            margin: 10px;
+            padding: 8px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🌍 Predict Your CO₂ Savings</h1>
+
+        <form action="/result" method="GET">
+
+            <!-- Step 1: Select the city -->
+            <label><strong>Select City:</strong></label><br>
+            <select name="city" required>
+                <option value="">-- Select a City --</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Coimbatore">Coimbatore</option>
+                <option value="Cuddalore">Cuddalore</option>
+                <option value="Dindigul">Dindigul</option>
+                <option value="Erode">Erode</option>
+                <option value="Hosur">Hosur</option>
+                <option value="Kanchipuram">Kanchipuram</option>
+                <option value="Karur">Karur</option>
+                <option value="Madurai">Madurai</option>
+                <option value="Nagercoil">Nagercoil</option>
+                <option value="Ramanathapuram">Ramanathapuram</option>
+                <option value="Salem">Salem</option>
+                <option value="Sivakasi">Sivakasi</option>
+                <option value="Thanjavur">Thanjavur</option>
+                <option value="Thoothukudi (Tuticorin)">Thoothukudi (Tuticorin)</option>
+                <option value="Tiruchirappalli (Trichy)">Tiruchirappalli (Trichy)</option>
+                <option value="Tirunelveli">Tirunelveli</option>
+                <option value="Tirupattur">Tirupattur</option>
+                <option value="Tiruppur">Tiruppur</option>
+                <option value="Vellore">Vellore</option>
+                <option value="Virudhunagar">Virudhunagar</option>
+            </select>
+            <br>
+
+            <!-- Step 2: Enter the distance traveled -->
+            <label><strong>Distance (km):</strong></label><br>
+            <input type="number" name="distance" step="0.1" required>
+            <br>
+
+            <!-- Step 3: Enter the time taken -->
+            <label><strong>Time Taken (min):</strong></label><br>
+            <input type="number" name="time_taken" step="0.1" required>
+            <br>
+
+            <!-- Step 4: Select mode of transport -->
+            <label><strong>Transport Mode:</strong></label><br>
+            <select name="transport_mode" required>
+                <option value="">-- Select Transport Mode --</option>
+                <option value="Bicycle">Bicycle</option>
+                <option value="Carpool">Carpool</option>
+                <option value="Electric Car">Electric Car</option>
+                <option value="Electric Scooter / E-Bike">Electric Scooter / E-Bike</option>
+                <option value="Public Transport (Bus, Metro, Train)">Public Transport</option>
+                <option value="Walking">Walking</option>
+            </select>
+            <br>
+
+            <!-- Final Step: Submit to get prediction -->
+            <button type="submit">Predict CO₂ Savings</button>
+        </form>
+    </div>
+</body>
+</html>

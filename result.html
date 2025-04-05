@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CO₂ Savings Result</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+            max-width: 500px;
+        }
+        h1 {
+            color: green;
+            margin-bottom: 10px;
+        }
+        .tagline {
+            font-size: 20px;
+            font-weight: bold;
+            color: #228B22;
+            margin-bottom: 20px;
+        }
+        .result {
+            font-size: 18px;
+            color: #003366;
+            line-height: 1.8;
+        }
+        .result div {
+            margin-bottom: 5px;
+        }
+        .result strong {
+            color: #000080;
+        }
+        button {
+            margin-top: 25px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌱 Your CO₂ Savings Result</h1>
+        <div class="tagline">Eco-Friendly Transport!</div>
+        <div class="result">
+            <div>In <strong>{{ city }}</strong>,</div>
+            <div>by using <strong>{{ transport_mode }}</strong>,</div>
+            <div>you saved <strong>{{ '%.2f' | format(co2_saved) }} kg</strong> of CO₂!</div>
+        </div>
+        <a href="/predict"><button>Predict Again</button></a>
+    </div>
+</body>
+</html>
